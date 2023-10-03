@@ -2,6 +2,6 @@ export default function stringTerminaCon(
   string: string,
   final: string
 ): boolean {
-  // TODO: implement
-  return false;
+  const regex = new RegExp(`${final}$`);
+  return regex.test(string);
 }
