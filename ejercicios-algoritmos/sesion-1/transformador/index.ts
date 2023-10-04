@@ -4,12 +4,19 @@ type Input = {
 };
 
 type Output = {
-  id: string;
+  id: number;
   nombre: string;
-  edad: string;
+  edad: number;
 };
 
 export default function transformador(input: Input): Output[] {
-  // TODO: implement
-  return [];
+  const res: Output[] = [];
+  for (let i = 0; i < input.nombres.length; i++) {
+    res.push({
+      id: i + 1,
+      nombre: `${input.nombres[i]}`,
+      edad: input.edades[i],
+    });
+  }
+  return res;
 }
