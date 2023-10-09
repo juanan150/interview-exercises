@@ -1,4 +1,7 @@
 export default function encontrarImpar(numeros: number[]): number {
-  // TODO: implementar
-  return 0;
+  const resp: { [key: string]: number } = {};
+  for (let num of numeros) {
+    resp[num] = resp[num] + 1 || 1;
+  }
+  return parseInt(Object.keys(resp).filter((vals) => resp[vals] % 2 !== 0)[0]) ?? -1;
 }
